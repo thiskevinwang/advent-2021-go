@@ -70,5 +70,5 @@ func main() {
 		}
 	}
 
-	fmt.Println("Part1: Position:", pos2.x*pos2.y)
+	fmt.Println("Part2: Position:", pos2.x*pos2.y)
 }
