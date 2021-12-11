@@ -14,6 +14,7 @@ func main() {
 	// generate an array like [-10, 1, -5, 16]
 	// - positive vals signify "1" was the most common digit at an index
 	// - negative vals signify "0" was the most common digit at an index
+	// - 0 val signifies that there were equal occurences of each.
 	bitOccurences := getBitOccurences(binaryStrings)
 
 	g, e := getRates(bitOccurences)
@@ -23,7 +24,7 @@ func main() {
 	o2Arr := binaryStrings
 	co2Arr := binaryStrings
 
-	// each index in the width of the input
+	// For each index in the width of the input,
 	// continually filter down entries
 	for i := range binaryStrings[0] {
 		if len(o2Arr) > 1 {
