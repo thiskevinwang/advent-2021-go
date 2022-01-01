@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
-	"main/utils"
 	"strconv"
+	"strings"
+
+	"github.com/thiskevinwang/advent-2021-go/utils"
 )
 
 // https://adventofcode.com/2021/day/3
 func main() {
 	// var binaryStrings []string = utils.GetInputs()
-	var binaryStrings []string = utils.FetchInputs()
+	inputs := utils.FetchInputs("https://adventofcode.com/2021/day/3/input")
+	binaryStrings := strings.Split(inputs, "\n")
 
 	// generate an array like [-10, 1, -5, 16]
 	// - positive vals signify "1" was the most common digit at an index

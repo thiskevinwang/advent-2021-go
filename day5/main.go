@@ -1,9 +1,9 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
 	"math"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -91,8 +91,10 @@ func getlineSegments(inputList []string) []LineSegment {
 	return lineSegments
 }
 
+//go:embed inputs.txt
+var byteArray []byte
+
 func main() {
-	byteArray, _ := os.ReadFile("inputs.txt")
 	inputList := getInputList(byteArray)
 	lineSegments := getlineSegments(inputList)
 

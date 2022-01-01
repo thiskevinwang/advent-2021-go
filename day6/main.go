@@ -1,18 +1,16 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	byteArray, err := os.ReadFile("inputs.txt")
-	if err != nil {
-		panic(err)
-	}
+//go:embed inputs.txt
+var byteArray string
 
+func main() {
 	lanternFishInit := strings.Split(strings.Trim(string(byteArray), "\n"), ",")
 
 	{ // part 1
