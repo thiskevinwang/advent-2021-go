@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"main/utils"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/thiskevinwang/advent-2021-go/utils"
 )
 
 func main() {

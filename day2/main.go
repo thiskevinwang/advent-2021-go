@@ -1,17 +1,14 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
+//go:embed input.txt
+var byteArray []byte
 
 func getList(byteArray []byte) []string {
 	return strings.Split(string(byteArray), "\n")
@@ -30,9 +27,6 @@ type Pos2 struct {
 
 // https://adventofcode.com/2021/day/2
 func main() {
-	byteArray, err := os.ReadFile("./input.txt")
-	check(err)
-
 	commands := getList(byteArray)
 	pos := Pos{x: 0, y: 0}
 

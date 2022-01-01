@@ -8,11 +8,10 @@ import (
 	"strings"
 )
 
-var Url = "https://adventofcode.com/2021/day/3/input"
 var SessionTokenKey = "AOC_SESSION_TOKEN"
 
 // fetch inputs from advent of code
-func FetchInputs() []string {
+func FetchInputs(url string) string {
 	// session=...
 	sessionToken, ok := os.LookupEnv(SessionTokenKey)
 	if !ok {
@@ -23,7 +22,7 @@ func FetchInputs() []string {
 	- Or :let $AOC_SESSION_TOKEN=<token>, from vim`)
 	}
 
-	req, err := http.NewRequest("GET", Url, nil)
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -45,6 +44,6 @@ func FetchInputs() []string {
 		panic(err)
 	}
 
-	return strings.Split(strings.Trim(string(bodyBytes), "\n"), "\n")
+	return strings.Trim(string(bodyBytes), "\n")
 
 }
