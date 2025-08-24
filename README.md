@@ -10,4 +10,6 @@ go run day1/main.go
 go run day2/main.go
 go run day3/main.go
 # etc.
+
+go test ./...
 ```
